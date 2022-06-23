@@ -1,0 +1,31 @@
+zh-TW:
+  attributes:
+    email: 聯絡信箱
+    password: 密碼
+    password_confirmation: 密碼確認
+    tel: 聯絡電話（市話）
+    mobile: 聯絡電話（行動）
+    address: 聯絡地址
+    link: 網址
+    about: 簡介
+    description: 敘述
+    tag_list: 標籤
+    image: 圖片
+    status: 狀態
+    status_text: 狀態
+    brief: 摘要
+    update: 更新
+  activerecord:
+    models:
+      user: 譯者
+      post: 文章
+    attributes:
+      user:
+        name: 名字
+        email: email
+        password: 密碼
+      post:
+        title: 標題
+        content: 內容
+        source: 資料來源
+        note: 備註
