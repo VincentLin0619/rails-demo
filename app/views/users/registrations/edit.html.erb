@@ -3,41 +3,45 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label t("attributes.email") %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field mb-3">
+    <%= f.label t("attributes.nick_name"), class: "form-label" %><br />
+    <%= f.text_field :nick_name, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label t("attributes.email"), class: "form-label" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class="field mmb-3">
+    <%= f.label :password, class: "form-label" %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
     <% if @minimum_password_length %>
-      <br />
-      <em>不得小於<%= @minimum_password_length %>個字</em>
+      <em class="form-text">不得小於<%= @minimum_password_length %>個字</em>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="field mb-3">
+    <%= f.label :password_confirmation, class: "form-label" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label "舊密碼" %> <i>(需要舊密碼來更新)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  <div class="field mb-3">
+    <%= f.label "舊密碼", class: "form-label" %><br /><i class="form-text">(需要舊密碼來更新)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit t("attributes.update") %>
+  <div class="actions mb-3">
+    <%= f.submit "更新", class: "btn btn-outline-success btn-lg" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>註銷我的帳號</h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p>Unhappy? <%= button_to "註銷帳號", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "確定註銷?" } %></p>
 
 <%= link_to "Back", :back %>

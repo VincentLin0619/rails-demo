@@ -26,7 +26,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
-        <li class="nav-item dropdown">
+      </ul>
+      <ul class="navbar-nav dropdown-menu-dark justify-content-center mx-3">
+          <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             href="#"
@@ -37,7 +39,7 @@
           >
             會員資訊
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
             <li>
               <%= link_to "修改帳號密碼", edit_user_registration_path, class: "dropdown-item" %>
             </li>
@@ -48,7 +50,6 @@
             </li>
           </ul>
         </li>
-
       </ul>
       <form class="d-flex">
         <input
