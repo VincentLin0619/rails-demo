@@ -12,8 +12,13 @@
   </head>
 
   <body>
-    <%= render "share/nav" %>
+    <% if current_user %>
+      <%= render "share/nav_user" %>
+    <% else %>
+      <%= render "share/nav" %>
+    <% end %>
     <div class="container">
+      <p class="notice"><%= notice %></p>
       <%= yield %>
     </div>
   </body>
