@@ -12,14 +12,20 @@
   </head>
 
   <body>
-    <% if current_user %>
+      <% if current_user %>
       <%= render "share/nav_user" %>
-    <% else %>
+      <% else %>
       <%= render "share/nav" %>
-    <% end %>
-    <div class="container">
-      <p class="notice"><%= notice %></p>
-      <%= yield %>
+      <% end %>
+      <div class="container">
+        <% if notice %>
+        <p class="alert alert-success my-2"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+        <p class="alert alert-danger my-2"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
     </div>
   </body>
 </html>
