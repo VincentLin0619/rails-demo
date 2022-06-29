@@ -19,7 +19,7 @@
           <a
             class="nav-link active"
             aria-current="page"
-            href="<%= root_path %>>"
+            href="<%= root_path %>"
             >Home</a
           >
         </li>
@@ -37,7 +37,11 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+          <% if current_user.role != "admin" %>
             使用者：<%= current_user.nick_name %>
+          <% elsif current_user.role == "admin" %>
+            管理員：<%= current_user.nick_name %>
+          <% end %>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
             <li>

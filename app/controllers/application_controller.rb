@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def admin?
+    self.role == "admin"
+  end
+
   def authenticate_admin
     unless current_user.admin?
-      flash[:alert] = "不允許"
+      flash[:alert] = "你不是管理員，不允許此操作"
       redirect_to root_path
     end
   end
