@@ -1,6 +1,24 @@
-<% @users.each do |u| %>
-<ul>
-  <li><%= u.nick_name %></li>
-  <li><%= u.email %></li>
-</ul>
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">會員暱稱</th>
+      <th scope="col">會員信箱</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.id %></th>
+      <td><%= user.nick_name %></td>
+      <td><%= user.email %></td>
+      <td><a name="" id="" class="btn btn-primary" href="#" role="button">編輯</a></td>
+      <td><a name="" id="" class="btn btn-danger" href="#" role="button">刪除</a></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+
+

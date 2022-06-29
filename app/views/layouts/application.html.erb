@@ -18,13 +18,16 @@
         <%= render "share/nav" %>
       <% end %>
       <div class="container">
+
         <% if notice %>
         <p class="alert alert-success my-2"><%= notice %></p>
         <% end %>
         <% if alert %>
         <p class="alert alert-danger my-2"><%= alert %></p>
         <% end %>
-
+        <div class= "paginate my-5">
+        <%= will_paginate @paginate if @paginate %>
+        </div>
         <%= yield %>
     </div>
   </body>
