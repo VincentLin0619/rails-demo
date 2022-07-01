@@ -1,9 +1,9 @@
 class Dashboard::Admin::UsersController < Dashboard::DashboardController
   before_action :find_user, only: [:show, :edit, :destroy, :update]
-  before_action :user_params, only: [:show, :update, :update]
+  before_action :user_params, only: [:show, :update]
 
   def index
-    @users = @paginate = User.all.paginate(page: params[:page], per_page: 10).order("id DESC")
+    @users = @paginate = User.where(role: "user").paginate(page: params[:page], per_page: 10).order("id DESC")
   end
 
   def show
