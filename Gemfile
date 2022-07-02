@@ -48,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem "spring"
   gem "faker", "~> 2.21"
+  gem "factory_girl", "~> 4.9"
 end
 
 group :test do
@@ -64,5 +65,3 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "net-smtp", require: false
 gem "net-imap", require: false
 gem "net-pop", require: false
-
-gem "factory_girl", "~> 4.9"
