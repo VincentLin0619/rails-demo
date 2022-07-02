@@ -96,6 +96,8 @@ GEM
       warden (~> 1.2.3)
     digest (3.1.0)
     erubi (1.10.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
     faker (2.21.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
@@ -273,6 +275,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave (~> 2.2)
   devise
+  factory_girl (~> 4.9)
   faker (~> 2.21)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)
