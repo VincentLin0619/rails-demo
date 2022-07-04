@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  root "products#index"
   devise_for :users, controllers: { session: "users/sessions", registrations: "users/registrations" }
 
   resources :products, only: [:index, :show]
