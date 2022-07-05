@@ -3,23 +3,23 @@
   <div class="col p-3">
     <div class="card product-card p-0">
       <div class="badge">Hot</div>
-      <img src="<%= product.cover %>" class="card-img-top product-tumb" />
+      <a href="<%= product_path(product.id) %>">
+        <img src="<%= product.cover %>" class="card-img-top product-tumb"
+      /></a>
       <div class="card-body product-details">
         <span class="product-catagory">商品分類</span>
         <h4><a href=""><%= product.name %></a></h4>
         <p><%= product.description %></p>
       </div>
-        <div
-          class="row row-cols-12 product-bottom-details p-3"
-        >
-          <div class="col product-price px-3">NT : <%= product.price %></div>
-          <div class="col product-links">
-            <div class="">
-              <a href=""><i class="fa fa-heart"></i></a>
-              <a href=""><i class="fa fa-shopping-cart"></i></a>
-            </div>
+      <div class="row row-cols-12 product-bottom-details p-3">
+        <div class="col product-price px-3">NT : <%= product.price %></div>
+        <div class="col product-links">
+          <div class="">
+            <a href=""><i class="fa fa-heart"></i></a>
+            <a href=""><i class="fa fa-shopping-cart"></i></a>
           </div>
         </div>
+      </div>
     </div>
   </div>
   <% end %>
