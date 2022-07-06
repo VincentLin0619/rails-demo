@@ -4,15 +4,13 @@
     <tr>
       <th scope="col">商品編輯</th>
       <th scope="col">商品資訊</th>
-      <th scope="col"></th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
     <tr>
       <th scope="row">
-        <img src="<%= product.cover %>" class="rounded mx-auto d-block" />
+        <img src="<%= product.cover.thumb %>" class="" />
       </th>
       <td>
         <ul class="list-group list-group-flush">
