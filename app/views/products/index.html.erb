@@ -1,12 +1,12 @@
 <div class="row row-cols-lg-3 row-col-sm-6">
   <% @products.each do |product| %>
 
-  <div class="col p-3" data-bs-toggle="modal" >
+  <div class="col p-3" >
     <div class="card product-card p-0">
       <div class="badge">Hot</div>
       <a href="<%= product_path(product.id) %>">
-        <img src="<%= product.cover %>" class="card-img-top product-tumb"
-      /></a>
+        <%= image_tag product.cover.(:thumb), class: "card-img-top" %>
+    </a>
       <div class="card-body product-details">
         <span class="product-catagory">商品分類</span>
         <h4><a href="<%= product_path(product.id) %>"><%= product.name %></a></h4>
