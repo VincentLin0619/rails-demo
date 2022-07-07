@@ -7,6 +7,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
 
   def new
     @product = Product.new
+    @product.attachments.build
   end
 
   def create
@@ -19,6 +20,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
   end
 
   def edit
+    @product.attachments.build if @product.attachments.empty?
   end
 
   def update
@@ -40,7 +42,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
   protected
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :sku, :price, :cover)
+    params.require(:product).permit(:name, :description, :price, :sku, :price, remove_images, :images => [], :attachments_attributes => [:id, :attachment, :description, :_destroy])
   end
 
   def find_product

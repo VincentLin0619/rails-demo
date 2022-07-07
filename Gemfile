@@ -32,6 +32,7 @@ gem "rails-i18n", "~> 7.0"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
+gem "nested_form_fields", "~> 0.8.4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
