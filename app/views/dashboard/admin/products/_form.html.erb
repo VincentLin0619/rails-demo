@@ -6,7 +6,7 @@
        <legend>Attachment</legend>
        <div class="form-group">
          <%= ff.label :attachment %>
-         <%= ff.file_field :attachment, :class => "form-control" %>
+         <%= ff.file_field :attachment, multiple: true, :class => "form-control" %>
          <% if ff.object.attachment.present? %>
            已上傳檔案 <%= link_to ff.object.description, ff.object.attachment.url, :target => "_blank" %>
          <% end %>
@@ -20,9 +20,7 @@
        <%= ff.remove_nested_fields_link "移除這個檔案", :class => "btn btn-danger" %>
      </fieldset>
    <% end %>
-   <p class="text-right">
-     <%= f.add_nested_fields_link :attachments, "新增檔案", :class => "btn btn-default" %>
-   </p>
+     <%= f.add_nested_fields_link :attachments, "新增檔案", :class => "btn btn-primary" %>
 </div>
 <div class="col mb-3">
   <%= f.label "商品名稱", class: "form-label" %>

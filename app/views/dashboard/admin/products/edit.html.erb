@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-6 col-sm-12">
     <div class="card product-card p-0">
-      <img src="<%= @product.cover if @product.cover? %>" class="card-img-top product-tumb" />
+      <img src="#" class="card-img-top product-tumb" />
       <div class="card-body product-details">
         <span class="product-catagory">商品分類</span>
         <h4><%= @product.name %></h4>
@@ -13,6 +13,7 @@
     </div>
   </div>
   <div class="col-lg-6 col-sm-12">
+  <div><%= @product.attachments.inspect %></div>
     <div class="row justify-content-center">
         <%= render "form", product: @product, url: dashboard_admin_product_path(@product) %>
     </div>
