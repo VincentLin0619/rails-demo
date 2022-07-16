@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :product_img do
+  factory :product_attachment do
     
   end
 end

@@ -1,2 +1,0 @@
-class ProductImg < ApplicationRecord
-end
