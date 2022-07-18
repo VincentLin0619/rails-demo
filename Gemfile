@@ -29,10 +29,10 @@ gem "will_paginate"
 gem "image_processing", "~> 1.2"
 gem "carrierwave", "~> 2.2"
 gem "rails-i18n", "~> 7.0"
+gem "cocoon", "~> 1.2"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
-gem "nested_form_fields", "~> 0.8.4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -67,3 +67,5 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "net-smtp", require: false
 gem "net-imap", require: false
 gem "net-pop", require: false
+
+

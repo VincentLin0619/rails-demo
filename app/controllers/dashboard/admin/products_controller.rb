@@ -43,7 +43,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
   protected
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :sku, :price, :attachments_attributes => [:id, :attachment, :description, :_destroy])
+    params.require(:product).permit(:name, :description, :price, :sku, :price, attachments_attributes: [:id, :attachment, :description, :_destroy])
   end
 
   def find_product

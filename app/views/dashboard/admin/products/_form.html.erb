@@ -1,42 +1,22 @@
-
 <%= form_with(model: product, url: url) do |f| %>
 <div class="col mb-3">
-     <%= f.fields_for :attachments do |ff| %>
-     <fieldset style="border-left: 5px solid #bbb; margin-bottom: 10px; padding: 10px;">
-       <legend>Attachment</legend>
-       <div class="form-group">
-         <%= ff.label :attachment %>
-         <%= ff.file_field :attachment, multiple: true, :class => "form-control" %>
-         <% if ff.object.attachment.present? %>
-           已上傳檔案 <%= link_to ff.object.description, ff.object.attachment.url, :target => "_blank" %>
-         <% end %>
-       </div>
-
-       <div class="form-group">
-         <%= ff.label :description %>
-         <%= ff.text_field :description, :class => "form-control" %>
-       </div>
-
-       <%= ff.remove_nested_fields_link "移除這個檔案", :class => "btn btn-danger" %>
-     </fieldset>
-   <% end %>
-     <%= f.add_nested_fields_link :attachments, "新增檔案", :class => "btn btn-primary" %>
+  <%= f.fields_for :attachments do |img| %>
+    <%= render "attachment_fields", f: img %>
+  <% end %>
+  <%= link_to_add_association "新增檔案", f, :attachments, :class => "btn btn-primary" %>
 </div>
 <div class="col mb-3">
-  <%= f.label "商品名稱", class: "form-label" %>
-  <%= f.text_field :name, class: "form-control", autofocus: true %>
+  <%= f.label "商品名稱", class: "form-label" %> <%= f.text_field :name, class: "form-control", autofocus: true %>
 </div>
 <div class="col mb-3">
-  <%= f.label "價格", class: "form-label" %>
-  <%= f.number_field :price, class: "form-control", autofocus: true %>
+  <%= f.label "價格", class: "form-label" %> <%= f.number_field :price, class: "form-control", autofocus: true %>
 </div>
 <div class="col mb-3">
-  <%= f.label "敘述", class: "form-label" %>
-  <%= f.text_area :description, class: "form-control" %>
+  <%= f.label "敘述", class: "form-label" %> <%= f.text_area :description,
+                                                           class: "form-control" %>
 </div>
 <div class="col mb-3">
-  <%= f.label "庫存", class: "form-label" %>
-  <%= f.number_field :sku, class: "form-control" %>
+  <%= f.label "庫存", class: "form-label" %> <%= f.number_field :sku, class: "form-control" %>
 </div>
 <div class="col"><%= f.submit class: "btn btn-primary" %></div>
 <% end %>
