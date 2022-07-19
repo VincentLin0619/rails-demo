@@ -8,7 +8,6 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
   def new
     @product = Product.new
     @product.attachments.build
-    4.times { @product.attachments.build }
   end
 
   def create
@@ -43,7 +42,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
   protected
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :sku, :price, attachments_attributes: [:id, :attachment, :description, :_destroy])
+    params.require(:product).permit(:name, :description, :price, :sku, :price, attachments_attributes: [:product_id, :id, :attachment, :description, :_destroy])
   end
 
   def find_product
