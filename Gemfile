@@ -27,9 +27,9 @@ gem "devise"
 gem "will_paginate"
 # Use Active Storage variant
 gem "image_processing", "~> 1.2"
-gem "carrierwave", "~> 2.2"
 gem "rails-i18n", "~> 7.0"
 gem "cocoon", "~> 1.2"
+gem "carrierwave", "~> 2.2"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
@@ -67,5 +67,3 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "net-smtp", require: false
 gem "net-imap", require: false
 gem "net-pop", require: false
-
-

@@ -11,6 +11,7 @@ import "cocoon-js";
 require("jquery");
 require("script");
 require("stylesheets");
+require("./upload_product_img");
 
 Rails.start();
 Turbolinks.start();
