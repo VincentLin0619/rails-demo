@@ -16,3 +16,5 @@ require("./upload_product_img");
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+import "controllers"
