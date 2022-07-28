@@ -30,6 +30,7 @@ gem "image_processing", "~> 1.2"
 gem "rails-i18n", "~> 7.0"
 gem "cocoon", "~> 1.2"
 gem "carrierwave", "~> 2.2"
+gem "font-awesome-sass", "~> 6.1.2"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false

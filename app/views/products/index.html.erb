@@ -1,15 +1,26 @@
 <div class="row row-cols-lg-3 row-col-sm-6">
   <% @products.each do |product| %>
 
-  <div class="col p-3" >
+  <div class="col p-3">
     <div class="card product-card p-0">
       <div class="badge">Hot</div>
-      <a href="<%= product_path(product.id) %>">
-        <img src="" class="card-img-top"
-      /></a>
+      <div class="slideshow-container">
+        <span id="previous"><i data-feather="chevron-left"></i></span>
+        <span id="next"><i data-feather="chevron-right"></i></span>
+        <div class="slider" id="slider">
+          <a href="<%= product_path(product.id) %>">
+            <% product.attachments.each do |item| %>
+            <img src="<%= item.image.url %>"/>
+            <% end %>
+          </a>
+        </div>
+      </div>
+
       <div class="card-body product-details">
         <span class="product-catagory">商品分類</span>
-        <h4><a href="<%= product_path(product.id) %>"><%= product.name %></a></h4>
+        <h4>
+          <a href="<%= product_path(product.id) %>"><%= product.name %></a>
+        </h4>
         <p><%= product.description %></p>
       </div>
       <div class="row row-cols-12 product-bottom-details p-3">
