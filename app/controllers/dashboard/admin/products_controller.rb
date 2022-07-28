@@ -22,7 +22,7 @@ class Dashboard::Admin::ProductsController < Dashboard::DashboardController
 
   def edit
     @attachments = Product.find_by(attachments: params[:attachments])
-    @product.attachments.build if @product.attachments.empty?
+    @product.attachments.build
   end
 
   def update

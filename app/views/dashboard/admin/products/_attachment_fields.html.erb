@@ -1,17 +1,15 @@
 <tr class="nested-fields justify-content-center">
     <td>
-    <%= f.object.image_cache.inspect %>
+      <%= image_tag f.object.image.url, class: "rounded mx-auto d-block img-fluid mb-3" if f.object.image.url.present? %>
       <%= f.file_field :image, onchange: "readURL(this);" %>
       <%= f.hidden_field :image_cache, value: f.object.image_cache %>
     </td>
     <td class="thumbnail-fluid">
     <p class="thumb"></p>
-      <img id="imgUpload" src='#' />
-      <%= image_tag f.object.image.url, class: "rounded mx-auto d-block img-fluid" if f.object.image.url.present? %>
-    </td>
-    <td>
       <%= f.label :description %>
       <%= f.text_field :description, :class => "form-control" %>
+    </td>
+    <td>
     </td>
     <td>
       <%= link_to_remove_association "移除這個檔案", f, :class => "btn btn-danger" unless f.object.new_record? %>
