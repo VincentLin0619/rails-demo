@@ -1,22 +1,10 @@
 <%= form_with(model: product, url: url) do |f| %>
-  <div class="container">
-    <table class="user-photo-form">
-      <thead>
-        <tr>
-          <td>input</td>
-          <td>preview</td>
-          <td>description</td>
-          <td>remove</td>
-        </tr>
-      </thead>
-      <tbody>
-        <%= f.fields_for :attachments do |img| %>
-          <%= render "attachment_fields", f: img %>
-        <% end %>
-      </tbody>
-        <%= link_to_add_association "上傳檔案", f, :attachments %>
-    </table>
-  </div>
+<div class="container-fluid">
+  <%= f.fields_for :attachments do |img| %>
+    <%= render "attachment_fields", f: img %>
+  <% end %>
+</div>
+   <%= link_to_add_association "新增圖片", f, :attachments, class: "btn btn-primary" %>
 <div class="col mb-3">
   <%= f.label "商品名稱", class: "form-label" %>
   <%= f.text_field :name, class: "form-control", autofocus: true %>

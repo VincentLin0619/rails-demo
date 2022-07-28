@@ -16,3 +16,5 @@ require("./slider");
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
+
+import "controllers"
